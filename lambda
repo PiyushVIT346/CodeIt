@@ -1,0 +1,49 @@
+#lambda function 
+#1
+def func(x,y,z): return x+y+z
+func(2,3,4)
+
+#2
+f=lambda x,y,z : x+y+z
+f(2,3,4)
+
+#3
+x=(lambda a="fee",b="fee",c="foe":a+b+c)
+x("wee)  #output weefiefoe
+
+#4
+def knights():
+  title="sir"
+  action=(lambda x:title+" "+x)
+  return action 
+act=knights()
+msg=act("robin")
+msg     #output "sir Robin"
+act     # output <function knights.<locals>.<lambda> at 0x00000000029CA488>
+
+#5
+L=[lambda x:x**2,
+lambda x:x**3,
+lambda x:x**4]
+for f in L:
+  print(f(2))
+print(L[0][3])
+
+#6
+def f1(x): return x**2
+def f2(x): return x**3
+def f3(x): return x**4
+L=[f1,f2,f3]
+for f in L:
+  print(f(2))
+print(L[0][3])
+
+
+#7
+key="got"
+{"already":(lambda: 2+2),
+ "got":(lambda: 2*4),
+"one":(lambda: 2**6)}[key]()   #output 8
+
+
+
